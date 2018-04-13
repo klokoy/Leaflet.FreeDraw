@@ -306,7 +306,7 @@ export default class FreeDraw extends FeatureGroup {
     createPath(map, svg, fromPoint, strokeWidth) {
         const lineFunction = line().curve(curveMonotoneX).x(d => d.x).y(d => d.y);
         let lastPoint = fromPoint;
-        return (toPoint) => {
+        return toPoint => {
             const lineData = [ lastPoint, toPoint ];
             lastPoint = toPoint;
             // Draw SVG line based on the last movement of the mouse's position.
